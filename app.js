@@ -1,31 +1,39 @@
+require('dotenv').config()
 // const app = require('express')()
 const express = require('express')
+const { blogs } = require('./model/index')
+
 const app = express()
-require('dotenv').config()
 
-app.set('view engine', 'ejs')
+// app.use(express.json())
+
+app.set('view engine','ejs')
 require("./model/index")
-app.get('/home', (req, res)=>{
-    const data =
-    {
-        name : "Bishal Rijal",
-        message: "Babal node",
-        age: 22
-    }
-res.render("home.ejs",{
-        haha:data
+app.use(express.urlencoded({extended : true}))
+
+app.get("/create",(req,res)=>{
+    res.render("create")
+
+})
+
+app.post('/create',async (req,res)=>{
+    // const title = req.body.title 
+    // const subtitle = req.body.subtitle 
+    // const description = req.body.description
+    const {title,subtitle,description} = req.body 
+   await blogs.create({
+        title : title,
+        subtitle : subtitle, 
+        description : description
     })
+    res.send("Blog added successfully!")
+
 })
 
-// Give access to all the files and folder inside public
-app.use(express.static('public/'))
 
 
+app.use(express.static('public/css/'))
 
-app.get('/about', (req, res)=>{
-res.render("about.ejs")
-})
-
-app.listen(3000, ()=>{
-    console.log("hi, World")
+app.listen(3000,()=>{
+    console.log("project suru vayo hai tw nodejs ko")
 })
