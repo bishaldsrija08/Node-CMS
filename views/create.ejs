@@ -8,19 +8,12 @@
 </head>
 <body>
     <!-- Navbar -->
-    <nav class="navbar">
-        <div class="logo">My Website</div>
-        <ul class="nav-links">
-            <li><a href="#">Home</a></li>
-            <li><a href="#">About</a></li>
-            <li><a href="#">Contact</a></li>
-        </ul>
-    </nav>
-
+  
+    <%- include('./navbar.ejs') %>
     <!-- Form Section -->
     <div class="form-container">
         <h2>Submit Your Article</h2>
-        <form action="/create" method="post" enctype="multipart/form-data">
+        <form action="/create" method="post" enctype="multipart/form-data"  >
             <div class="form-group">
                 <label for="title">Title:</label>
                 <input type="text" id="title" name="title" required>

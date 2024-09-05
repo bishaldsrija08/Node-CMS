@@ -14,7 +14,8 @@ const makeBlogTable = (sequelize,DataTypes)=>{
         }, 
         image : {
             type : DataTypes.STRING, 
-        }
+        }, 
+
     })
     return Blog
 }

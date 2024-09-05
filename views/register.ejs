@@ -8,19 +8,12 @@
 </head>
 <body>
     <!-- Navbar -->
-    <nav class="navbar">
-        <div class="logo">My Website</div>
-        <ul class="nav-links">
-            <li><a href="#">Home</a></li>
-            <li><a href="#">About</a></li>
-            <li><a href="#">Contact</a></li>
-        </ul>
-    </nav>
+    <%- include("./navbar.ejs") %>
 
     <!-- Form Section -->
     <div class="form-container">
         <h2>Register User</h2>
-        <form action="/register" method="post">
+        <form action="/register" method="post"  >
             <div class="form-group">
                 <label for="username">username:</label>
                 <input type="text" id="username" name="username" required>

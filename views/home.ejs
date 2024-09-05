@@ -8,25 +8,20 @@
 </head>
 <body>
     <!-- Navbar -->
-    <nav class="navbar">
-        <div class="logo">My Website</div>
-        <ul class="nav-links">
-            <li><a href="#">Home</a></li>
-            <li><a href="#">About</a></li>
-            <li><a href="#">Services</a></li>
-            <li><a href="#">Contact</a></li>
-        </ul>
-    </nav>
+    <%- include('./navbar.ejs') %>
 
     <!-- Card Section -->
     <div class="card-container">
-   <%  blogs.forEach(function(blog){ %>
+      <%  blogs.forEach(function(blog){ %>
             <div class="card">
-                <img src="<%-blog.image%>" alt="Card Image">
-                <div class="card-title"><%-blog.title%></div>
+                <img src="<%- blog.image %>" alt="Card Image">
+                <div class="card-title"><%- blog.title %></div>
                 <a href="/blog/<%- blog.id %>">Read more..</a>
             </div>
-            <% })%>
+        <% }) %>
+   
+    
+        
     </div>
 </body>
 </html>
