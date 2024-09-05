@@ -1,7 +1,7 @@
 const { homePage, createForm, createBlog, singleBlog, deleteBlog } = require('../controller/blogController')
 
 const router = require('express').Router()
-const {multer,storage,storage2,storage3} = require('../middleware/multerConfig')
+const {multer,storage,storage2,storage3} = require('./../middleware/multerConfig')
 const upload = multer({storage:storage})
 
 router.route("/").get(homePage)
