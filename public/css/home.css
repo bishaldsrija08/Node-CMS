@@ -16,7 +16,7 @@ body {
     align-items: center;
 }
 
-.navbar .logo {
+.navbar .logo a {
     font-size: 20px;
     font-weight: bold;
 }
