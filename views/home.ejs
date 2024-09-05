@@ -15,7 +15,7 @@
     <div class="card-container">
       <%  blogs.forEach(function(blog){ %>
             <div class="card">
-                <img src="<%- https://node-cms.onrender.com/blog.image %>" alt="Card Image">
+                <img src="https://node-cms.onrender.com/<%-blog.image %>" alt="Card Image">
                 <div class="card-title"><%- blog.title %></div>
                 <a href="/blog/<%- blog.id %>">Read more..</a>
             </div>
